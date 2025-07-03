@@ -244,7 +244,7 @@ async function pollSessionStatus() {
                  pairingSection.style.display = 'block'; // Optionally show QR again
                  imageDisplaySection.style.display = 'block'; // Keep images visible
                  imageTimerDisplay.style.display = 'block'; // Keep timer visible
-                 updateStatus('Sender disconnected. Session active until timeout.', true);
+                 updateStatus('Sender disconnected. Session active until timeout (reload page on phone to re-establish connection).', true);
                  updateImageStatus('Sender disconnected. Session will expire unless they reconnect.');
                  // Keep polling, sender might reconnect (if server allows)
                  break;

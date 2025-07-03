@@ -1,5 +1,5 @@
 {
-  "name": "glitch-image-transfer",
+  "name": "QuickBeam",
   "version": "1.0.0",
   "description": "Transfer images from phone to computer via QR code pairing.",
   "main": "server.js",

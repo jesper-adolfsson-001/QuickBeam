@@ -1,0 +1,12 @@
+modules = ["nodejs-23"]
+run = "node server.js"
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "node server.js"]
+deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 3000
+externalPort = 80

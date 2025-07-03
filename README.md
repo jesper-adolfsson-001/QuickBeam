@@ -1,6 +1,6 @@
-# WebFileTransfer
+# QuickBeam
 
-WebFileTransfer is a lightweight Node 16/Fastify web app that lets you move photos from any phone to a computer on the same network **without installing anything**.  
+Quickbeam is a lightweight Node 23/Fastify web app that lets you move photos from any phone to a computer **without installing anything**.  
 Pair the two browsers with a one-time QR-code, shoot/select pictures on the phone, and they appear (and can auto-download) on the desktop almost instantly.
 
 ---
@@ -32,19 +32,12 @@ Pair the two browsers with a one-time QR-code, shoot/select pictures on the phon
 - GET /admin – View logs Basic-Auth dashboard (set ADMIN_CREDENTIALS)
 
 # Environment Variables
-| Env var              | Default        | Description                        |
-|----------------------|----------------|------------------------------------|
-| `PORT`               | `3000`         | HTTP port                          |
-| `SESSION_TIMEOUT_MS` | `120000`       | Session lifetime                   |
-| `CLIENT_TIMEOUT_MS`  | `3000`         | Client-side fetch timeout          |
-| `UPLOAD_DIR`         | `.data/uploads`| Temp image storage                 |
-| `ADMIN_CREDENTIALS`  | user:pass      | to enable `/admin`   |
+See server.js
 
 
 
-## You built this with Glitch!
+## You built this with Glitch and then moved it to Replit!
+- Originally built on [Glitch](https://glitch.com) but then moved to [Replit](https://replit.com)
+- Used namecheap.com to by site name quickbeam.app
+- Used fastly.com as DNS
 
-[Glitch](https://glitch.com) is a friendly community where millions of people come together to build web apps and websites.
-
-- Need more help? [Check out our Help Center](https://help.glitch.com/) for answers to any common questions.
-- Ready to make it official? [Become a paid Glitch member](https://glitch.com/pricing) to boost your app with private sharing, more storage and memory, domains and more.
