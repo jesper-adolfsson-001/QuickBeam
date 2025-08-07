@@ -125,9 +125,9 @@ function resetUIForNewSession() {
     */
   
     //window.odometerOptions = {format: '(,ddd)'};
-    photoCounter.innerHTML = 100;
+    photoCounter.innerHTML = 0000;
     setTimeout(function(){
-      photoCounter.innerHTML = 654;
+      photoCounter.innerHTML = 0000;
     }, 100);
     photoCounter.style.display = '';
     

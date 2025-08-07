@@ -57,24 +57,19 @@ h1 {
 }
 
 .header-item.logo {
-  flex-basis: 12%;
+  flex-basis: 33%;
   text-align: left;
+}
+.header-item.scanexample {
+  flex-basis: 33%;
+    text-align: center;
 }
 .header-item.counter {
-  flex-basis: 18%;
+  flex-basis: 33%;
   text-align: right;
 }
-.header-item.ad {
-  flex-basis: 37%;
-}
-.header-item.steps {
-  flex-basis: 23%;
-  text-align: left;
-  font-family: 'Segoe UI', Roboto, sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #333;
-}
+
+
 
 .header-item.steps b {
   font-weight: 600;
@@ -99,13 +94,14 @@ h1 {
 
 
 
-h2 {
+h1 {
     color: #333;
     margin-top: 0; /* Remove default top margin inside cards */
     margin-bottom: 15px;
     border-bottom: 1px solid #eee; /* Subtle separator */
     padding-bottom: 10px;
     font-weight: 500;
+    text-align: center;
 }
 
 /* Status Box Style (used for #status, #image-status, #qr-loading etc.) */
@@ -376,7 +372,7 @@ label {
     position: relative; /* Establishes positioning context for children */
 }
 
-.admin-container h1 {
+.admin-container h2 {
     text-align: center;
     /* --- Adjust margin to avoid overlap with logout button --- */
     margin-bottom: 25px;
@@ -549,5 +545,21 @@ label {
   font-weight: bold;
   // color: #1983ed;
   /* text-shadow: 0 0 6px #6e52ff; */
+}
+
+#photo-counter .odometer-formatting-mark {
+  color: #1983ed; /* Same as your counter number color */
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 

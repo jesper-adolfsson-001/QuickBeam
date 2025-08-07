@@ -13,6 +13,7 @@ const mime = require("mime-types");
 // --- Import the Log Service ---
 const {
     logEvent,
+    getLogData,
     Actions,
     photoUploaded,
     getPhotoCount,
@@ -894,27 +895,24 @@ fastify.get(
             });
         }
 
-        try {
-            // Check if log file exists
-            const fileExists = await fs.pathExists(LOG_FILE_PATH);
-            if (!fileExists) {
-                fastify.log.warn({
-                    msg: "Log file not found on API request",
-                    path: LOG_FILE_PATH,
-                });
-                return reply.code(200).send({
-                    // Send success but empty data
-                    success: true,
-                    logs: [],
-                    currentPage: 1,
-                    totalPages: 0,
-                    totalLogs: 0,
-                });
-            }
+        const logData = await getLogData();
 
-            // Read the entire log file
-            const logData = await fs.readFile(LOG_FILE_PATH, "utf8");
-            const lines = logData
+        if (!logData.success) {
+            fastify.log.warn({
+                msg: "Log file not found on API request",
+                path: LOG_FILE_PATH,
+            });
+            return reply.code(200).send({
+                // Send success but empty data
+                success: true,
+                logs: [],
+                currentPage: 1,
+                totalPages: 0,
+                totalLogs: 0,
+            });
+        } else {
+
+            const lines = logData.data
                 .split("\n")
                 .filter((line) => line.trim() !== ""); // Split and remove empty lines
 
@@ -969,18 +967,8 @@ fastify.get(
                 totalPages: totalPages,
                 totalLogs: totalLogs,
             });
-        } catch (error) {
-            fastify.log.error({
-                msg: "Error reading or processing log file",
-                error: error.message,
-                stack: error.stack,
-            });
-            reply.code(500).send({
-                success: false,
-                message: "Failed to read or process logs.",
-            });
-        }
-    },
+        } 
+    }
 );
 
 // --- Start the Server ---
